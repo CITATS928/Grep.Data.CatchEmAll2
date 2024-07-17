@@ -1,18 +1,36 @@
 # Part 1
 ### a)
+ggrep -P "beed" filescan_00.1 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/beedrill.txt
+ggrep -P "blas" filescan_00.1>/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/blastoise.txt
+ggrep -P "bulb" filescan_00.1>/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/bulbasaur.txt
+ggrep -P "butt" filescan_00.1>/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/butterfree.txt
+
+
+ggrep -P "char.+izard" filescan_00.2 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/izard.txt     
+ggrep -P "char.+meleon" filescan_00.2 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/meleon.txt
+ggrep -P "char.+mander" filescan_00.2 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/mander.txt
 
 
 
+➜  forest git:(master) ✗ ggrep -P "ivys" filescan_00.3 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/ivysaur.txt
+➜  forest git:(master) ✗ ggrep -P "jigg" filescan_00.3 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/jigglypuff.txt
+➜  forest git:(master) ✗ ggrep -P "meow" filescan_00.3 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/meowth.txt
+➜  forest git:(master) ✗ ggrep -P "pika" filescan_00.3 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/pikachu.txt
 
+
+➜  forest git:(master) ✗ ggrep -P "psyd" filescan_00.4 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/psyduck.txt
+➜  forest git:(master) ✗ ggrep -P "squi" filescan_00.4 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/squirtle.txt
+➜  forest git:(master) ✗ ggrep -P "venu" filescan_00.4 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/venusaur.txt
+➜  forest git:(master) ✗ ggrep -P "wart" filescan_00.4 >/Users/qian/Desktop/ZipCode/Python/Grep.Data.CatchEmAll2/captured/wartortle.txt
 ### b)
 
 
 
 ### c)
-
-
-
-
+filescan_00.1 -> beedrill, blastoise, bulbasaur, butterfree
+filescan_00.2 -> mander, meleon, izard
+filescan_00.3 -> pikachu, meowth, jigglypuff, ivysaur
+filescan_00.4 -> wartortle, venusaur, squirtle, psyduck
 
 
 
@@ -26,13 +44,17 @@
 ### a)
 
 
-
+ls -F | ggrep -v '^instruction.txt' | wc -l
+      15
 
 
 
 ### b)
+for file in *; do wc -l "$file"; done | sort -n -k1,1 | tail -n 1
+      40 pikachu.txt
 
 
-
-
-
+for file in *; do wc -l "$file"; done | sort -n -k1,1 | tail -n 3 
+      40 beedrill.txt
+      40 izard.txt
+      40 pikachu.txt
